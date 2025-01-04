@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Replace with your MySQL username
-$password = ""; // Replace with your MySQL password
+$username = "root";
+$password = ""; 
 $dbname = "medion";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,8 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $conn->real_escape_string($_POST['password']);
 
 
-    // Hash the password before storing it
-    //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+  
     $plain_password = $password;
 
     $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$plain_password')";
