@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #06d7e2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: #170101;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(27, 1, 1, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #f6ebeb;
+        }
+        .login-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 50%;
+            padding: 10px;
+            background-color: #06d7e2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-container button:hover {
+            background-color: #04baf2;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form action="admin_login.php" method="POST">
+            <input type="email" name="admin_email" placeholder="Admin Email" required>
+            <input type="password" name="admin_password" placeholder="Admin Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="error-message">
+            <!-- Error message can be displayed here dynamically -->
+            <?php if (isset($_GET['error'])) echo htmlspecialchars($_GET['error']); ?>
+        </div>
+        <br><br>
+        <a href="userAdmin.html"> <h5>Back</h5> </a>
+    </div>
+
+</body>
+</html>
+
